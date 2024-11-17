@@ -1,2 +1,4 @@
 google-generativeai
 flask
+langchain 
+langchain_groq
