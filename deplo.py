@@ -1,15 +1,13 @@
 from flask import Flask, request, jsonify
-import google.generativeai as genai
-
-# Configure the Generative AI model
-genai.configure(api_key="AIzaSyBcBNW3moG8nFwpqCe7IiPAWqzMJx3WNK0")
-model = genai.GenerativeModel("gemini-1.5-pro")
-
+from langchain_groq import ChatGroq
 # Function to call the Generative AI model
+
+llm = ChatGroq(model = 'llama-3.1-70b-versatile' , api_key="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")
+
 def ask(prompt):
     try:
-        response = model.generate_content(prompt)
-        return response.text
+        response = llm.invoke(prompt)
+        return response.content
     except Exception as e:
         return {"error": str(e)}
 
