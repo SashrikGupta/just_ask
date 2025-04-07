@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from langchain_groq import ChatGroq
 # Function to call the Generative AI model
 
-llm = ChatGroq(model = 'llama-3.1-70b-versatile' , api_key="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")
+llm = ChatGroq(model = 'llama-3.3-70b-versatile' , api_key="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")
 
 def ask(prompt):
     try:
