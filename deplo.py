@@ -4,7 +4,7 @@ from langchain_groq import ChatGroq
 # Function to call the Generative AI model
 def ask(prompt, api_key):
     try:
-        llm = ChatGroq(model='llama-3-3-70b-versatile', api_key=api_key)
+        llm = ChatGroq(model='llama-3.3-70b-versatile', api_key=api_key)
         response = llm.invoke(prompt)
         return {"response": response.content}
     except Exception as e:
